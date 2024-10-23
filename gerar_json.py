@@ -91,9 +91,9 @@ if __name__ == '__main__':
         poluente = input('Qual poluente? (Pressione enter sem nada preenchido para sair) ').upper()
         if not poluente:
             break
-        print('Escreve o range dessa forma: valor1 valor2')
+        print('Escreva o range dessa forma: valor1 valor2')
         intervalo_inicio, intervalo_fim = map(int, input('Qual intervalo da faixa de concentração para o calculo de IQA? ').split())
-        valores_iniciais[poluente] = randint(intervalo_inicio , intervalo_fim + offset)
+        valores_iniciais[poluente] = [randint(intervalo_inicio , intervalo_fim + offset)]
         os.system('cls')
         print(f'{poluente}: [{intervalo_inicio}, {intervalo_fim}] adicionado com sucesso!', end='\n\n')
 
