@@ -4,10 +4,10 @@ import json
 import os
 from typing import List
 
+
 PATH = os.path.abspath(os.path.dirname(__file__))
 nome_arquivo = 'dados_IQA_regiao_metrop.json'
 caminho = os.path.join(PATH, nome_arquivo)
-
 
 # ----------------------------- PARTE 1: GERAR JSON --------------------------------------
 def escrever_json(valores_iniciais):
@@ -90,12 +90,13 @@ if __name__ == '__main__':
     # para adicionar uma margem ao final do intervalo
     offset = 20
     while True:
-        poluente = input('Qual poluente? (Pressione enter sem nada preenchido para sair) ')
+        poluente = input('Qual poluente? (Pressione enter sem nada preenchido para sair) ').upper()
         if not poluente:
             break
-        print('Escreve o range dessa forma: x y')
+        print('Escreve o range dessa forma: valor1 valor2')
         intervalo_inicio, intervalo_fim = map(int, input('Qual intervalo da faixa de concentração para o calculo de IQA? ').split())
         valores_iniciais[poluente] = randint(intervalo_inicio , intervalo_fim + offset)
+        os.system('cls')
         print(f'{poluente}: [{intervalo_inicio}, {intervalo_fim}] adicionado com sucesso!', end='\n\n')
 
     escrever_json(valores_iniciais)
