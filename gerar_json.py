@@ -2,22 +2,20 @@ from random import choice, randint
 from time import sleep
 import json
 import os
-from typing import List
-
+from typing import List, Dict
 
 PATH = os.path.abspath(os.path.dirname(__file__))
 nome_arquivo = 'dados_IQA_regiao_metrop.json'
 caminho = os.path.join(PATH, nome_arquivo)
 
 # ----------------------------- PARTE 1: GERAR JSON --------------------------------------
-def escrever_json(valores_iniciais):
+def escrever_json(valores_iniciais: Dict[str, float]) -> None:
     # dict comprehension para criar um json inicial já com valores iniciais
-    data = {chave: [valor] for chave, valor in valores_iniciais.items()}
+    # data = {chave: [valor] for chave, valor in valores_iniciais.items()}
 
     # criando o json inicial com context manager 
     with open(caminho, 'w') as arq:
-        json.dump(data, arq, ensure_ascii=False, indent=2)
-
+        json.dump(valores_iniciais, arq, ensure_ascii=False, indent=2)
 
 # ----------------------------- PARTE 2: GERAR VALORES --------------------------------------
 def gerar_valores_subsequentes(ultimo_valor_gerado: float) -> float:
