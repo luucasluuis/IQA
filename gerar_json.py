@@ -76,7 +76,7 @@ def gerar_valores_json(qtd_valores: int, lista_valores: List[str]) -> float:
 
                 arq.seek(0) 
                 json.dump(data, arq, ensure_ascii=False, indent=2)
-                sleep(3)
+                sleep(2)
                 arq.truncate()
 
     print('Arquivo json gerado com sucesso!')
