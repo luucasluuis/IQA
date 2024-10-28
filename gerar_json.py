@@ -31,7 +31,7 @@ def gerar_valores_subsequentes(ultimo_valor_gerado: float) -> float:
         ultimo_valor_gerado (float): O último valor gerado, usado como base para calcular
         o novo valor.
 
-    returns:
+    returns::
         float: O novo valor gerado, arredondado para duas casas decimais. Se o valor for 
         menor que 0, retorna 0.
     '''
@@ -62,7 +62,7 @@ def gerar_valores_json(qtd_valores: int, lista_valores: List[str]) -> float:
             lista_valores (List[str]): Uma lista contendo os nomes das chaves cujos valores
             serão atualizados no arquivo JSON.
         
-        returns:
+        returns::
             float: Retorna o novo valor subsequente gerado para cada item,
             arredondado para duas casas decimais.
     '''
