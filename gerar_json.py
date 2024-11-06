@@ -92,6 +92,7 @@ if __name__ == '__main__':
         if not poluente:
             break
         print('Escreva o range dessa forma: valor1 valor2')
+        
         intervalo_inicio, intervalo_fim = map(int, input('Qual intervalo da faixa de concentração para o calculo de IQA? ').split())
         valores_iniciais[poluente] = [randint(intervalo_inicio , intervalo_fim + offset)]
         os.system('cls')
@@ -103,7 +104,7 @@ if __name__ == '__main__':
     while True:
         try:
            qtd_valores = input('Agora me diga a quantidade de valores que você deseja ter para cada poluente: ')
-           qtd_valores = int(qtd_valores)
+           qtd_valores = int(qtd_valores) - 1
            break
         except ValueError:
             print('Digite um numero, por favor!\n')
